@@ -1,9 +1,9 @@
 %% This method compares the average distance classifier
 tic
 %% Optional code
-M = csvread('data_11x11f.csv');
-M = sortrows(M,1059);
-set = make_sets3(M,4);
+% M = csvread('data_11x11f.csv');
+% M = sortrows(M,1059);
+% set = make_sets3(M,4);
 
 %% Cross validation
 per_accuracy = [];
@@ -44,6 +44,7 @@ for per = per_vector
 
         for i=1:size(validation,1)
             predicted_target = average_distance1(training,validation(i,1:end-1),per);
+%             predicted_target = mode_nearest_distances(training,validation(i,1:end-1),per);
             real_target = validation(i,end);
             if real_target == 1 && predicted_target == 1
                 TP = TP + 1;
@@ -90,6 +91,7 @@ for per = per_vector
 end
 per_matrix = [per_vector; per_accuracy]
 toc
+%% Results with average_distance1 (with a threshold)
 %% Results with percentile 5th
 % Accuracy = 0.811823
 % Precission (label 1) = 0.848641
