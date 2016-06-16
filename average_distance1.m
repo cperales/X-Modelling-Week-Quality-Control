@@ -7,7 +7,6 @@ if (nargin==2)
     per=20;
 end
 
-
 cont1 = 0;
 cont2 = 0;
 d1 = [];
