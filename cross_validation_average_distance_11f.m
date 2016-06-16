@@ -1,5 +1,5 @@
 %% This method compares the average distance classifier
-
+tic
 %% Optional code
 M = csvread('data_11x11f.csv');
 M = sortrows(M,1059);
@@ -7,7 +7,8 @@ set = make_sets3(M,4);
 
 %% Cross validation
 per_accuracy = [];
-per_vector = 5:5:70;
+% per_vector = 5:5:70;
+per_vector = 20:20;
 for per = per_vector
     % Initialites vectors
     fscore1 = [];
@@ -87,12 +88,13 @@ for per = per_vector
     fprintf('\n')
 end
 per_matrix = [per_vector; per_accuracy]
+toc
 %% Results with percentile 5th
 % Accuracy = 0.811823
 % Precission (label 1) = 0.848641
 % Precission (label 2) = 0.725876
 % Recall (label 1) = 0.878475
-% Recall (label 2) = 0.672535
+% Specifity = 0.672535
 % F_Score (label 1) = 0.863296
 % F_Score (label 2) = 0.698169
 %% Results with percentile 10th
@@ -100,7 +102,7 @@ per_matrix = [per_vector; per_accuracy]
 % Precission (label 1) = 0.861022
 % Precission (label 2) = 0.732758
 % Recall (label 1) = 0.877001
-% Recall (label 2) = 0.704225
+% Specifity = 0.704225
 % F_Score (label 1) = 0.868934
 % F_Score (label 2) = 0.718191
 %% Results with percentile 15th
@@ -108,7 +110,7 @@ per_matrix = [per_vector; per_accuracy]
 % Precission (label 1) = 0.889934
 % Precission (label 2) = 0.747376
 % Recall (label 1) = 0.874895
-% Recall (label 2) = 0.773768
+% Specifity = 0.773768
 % F_Score (label 1) = 0.882341
 % F_Score (label 2) = 0.760311
 %% Results with percentile 20th
@@ -116,7 +118,7 @@ per_matrix = [per_vector; per_accuracy]
 % Precission (label 1) = 0.908246
 % Precission (label 2) = 0.735163
 % Recall (label 1) = 0.858888
-% Recall (label 2) = 0.818662
+% Specifity = 0.818662
 % F_Score (label 1) = 0.882877
 % F_Score (label 2) = 0.774669
 %% Results with percentile 25th
@@ -124,6 +126,78 @@ per_matrix = [per_vector; per_accuracy]
 % Precission (label 1) = 0.927128
 % Precission (label 2) = 0.715596
 % Recall (label 1) = 0.835931
-% Recall (label 2) = 0.862676
+% Specifity = 0.862676
 % F_Score (label 1) = 0.879167
 % F_Score (label 2) = 0.782275
+%% Results with percentile 30th
+% Accuracy = 0.841453
+% Precission (label 1) = 0.936813
+% Precission (label 2) = 0.702700
+% Recall (label 1) = 0.820977
+% Specifity = 0.884243
+% F_Score (label 1) = 0.875071
+% F_Score (label 2) = 0.783073
+%% Results with percentile 35th
+% Accuracy = 0.833761
+% Precission (label 1) = 0.943112
+% Precission (label 2) = 0.685496
+% Recall (label 1) = 0.802654
+% Specifity = 0.898768
+% F_Score (label 1) = 0.867217
+% F_Score (label 2) = 0.777751
+%% Results with percentile 40th
+% Accuracy = 0.828632
+% Precission (label 1) = 0.947777
+% Precission (label 2) = 0.674733
+% Recall (label 1) = 0.790227
+% Specifity = 0.908891
+% F_Score (label 1) = 0.861816
+% F_Score (label 2) = 0.774432
+%% Results with percentile 45th
+% Accuracy = 0.817664
+% Precission (label 1) = 0.950202
+% Precission (label 2) = 0.656707
+% Recall (label 1) = 0.770851
+% Specifity = 0.915493
+% F_Score (label 1) = 0.851132
+% F_Score (label 2) = 0.764737
+%% Results with percentile 50th
+% Accuracy = 0.810114
+% Precission (label 1) = 0.955219
+% Precission (label 2) = 0.643685
+% Recall (label 1) = 0.754634
+% Specifity = 0.926056
+% F_Score (label 1) = 0.843142
+% F_Score (label 2) = 0.759451
+%% Results with percentile 55th
+% Accuracy = 0.802564
+% Precission (label 1) = 0.962311
+% Precission (label 2) = 0.630950
+% Recall (label 1) = 0.736942
+% Specifity = 0.939701
+% F_Score (label 1) = 0.834673
+% F_Score (label 2) = 0.754971
+%% Results with percentile 60th
+% Accuracy = 0.788604
+% Precission (label 1) = 0.966001
+% Precission (label 2) = 0.612039
+% Recall (label 1) = 0.712511
+% Specifity = 0.947623
+% F_Score (label 1) = 0.820106
+% F_Score (label 2) = 0.743720
+%% Results with percentile 65th
+% Accuracy = 0.772650
+% Precission (label 1) = 0.968763
+% Precission (label 2) = 0.592440
+% Recall (label 1) = 0.685973
+% Specifity = 0.953785
+% F_Score (label 1) = 0.803189
+% F_Score (label 2) = 0.730880
+%% Results with percentile 70th
+% Accuracy = 0.754416
+% Precission (label 1) = 0.969224
+% Precission (label 2) = 0.572273
+% Recall (label 1) = 0.657751
+% Specifity = 0.956426
+% F_Score (label 1) = 0.783627
+% F_Score (label 2) = 0.716053
