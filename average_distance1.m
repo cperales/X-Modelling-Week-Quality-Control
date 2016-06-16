@@ -8,8 +8,6 @@ if (nargin==2)
     per=20;
 end
 
-cont1 = 0;
-cont2 = 0;
 d1 = [];
 d2 = [];
 for i=1:size(train_set,1)
