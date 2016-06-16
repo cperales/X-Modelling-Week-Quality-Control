@@ -8,7 +8,7 @@ set = make_sets3(M,4);
 %% Cross validation
 per_accuracy = [];
 % per_vector = 5:5:70;
-per_vector = 75:5:100;
+per_vector = 20:5:20;
 for per = per_vector
     % Initialites vectors
     fscore1 = [];
@@ -65,8 +65,7 @@ for per = per_vector
         fprintf('FP = %i, percentage = %f\n',FP,FP/total)
         fprintf('Accuracy = %f\n',(TP+TN)/(TP+FP+TN+FN))
         fprintf('Precission (label 1) = %f\n',TP/(TP+FP))
-        fprintf('Recall (label 1) = %f\n',TP/(TP+FN))
-        % Recall = sensitive
+        fprintf('Recall (label 1) = %f\n',TP/(TP+FN)) % Recall = sensitive
         fprintf('F_Score (label 1) = %f\n',2*(TP/(TP+FN)*TP/(TP+FP))/(TP/(TP+FN) + TP/(TP+FP)))
         fprintf('\n')
         recall_vector = [recall_vector TP/(TP+FN)];
@@ -204,3 +203,26 @@ toc
 % Specifity = 0.956426
 % F_Score (label 1) = 0.783627
 % F_Score (label 2) = 0.716053
+%% Results with percentile 85th
+% Accuracy = 0.677350
+% Precission (label 1) = 0.980168
+% Precission (label 2) = 0.500914
+% Recall (label 1) = 0.533698
+% Specifity (label 2) = 0.977553
+% F_Score (label 1) = 0.691009
+% F_Score (label 2) = 0.662374
+%% Results with percentile 90th
+% Accuracy = 0.643732
+% Precission (label 1) = 0.983934
+% Precission (label 2) = 0.475736
+% Recall (label 1) = 0.481045
+% Specifity (label 2) = 0.983715
+% F_Score (label 1) = 0.646082
+% F_Score (label 2) = 0.641299
+%% Results with percentile 95th
+% Precission (label 1) = 0.986968
+% Precission (label 2) = 0.442825
+% Recall (label 1) = 0.404381
+% Specifity (label 2) = 0.988996
+% F_Score (label 1) = 0.573628
+% F_Score (label 2) = 0.611729
