@@ -1,14 +1,14 @@
 %% This method compares the average distance classifier
 tic
 %% Optional code
-M = csvread('data_11x11f.csv');
-M = sortrows(M,1059);
-set = make_sets3(M,4);
+% M = csvread('data_11x11f.csv');
+% M = sortrows(M,1059);
+% set = make_sets3(M,4);
 
 %% Cross validation
 per_accuracy = [];
 % per_vector = 5:5:70;
-per_vector = 20:20;
+per_vector = 15:1:25;
 for per = per_vector
     % Initialites vectors
     fscore1 = [];
@@ -43,7 +43,7 @@ for per = per_vector
         FN = 0;
 
         for i=1:size(validation,1)
-            predicted_target = average_distance1(training,validation(i,1:end-1),per);
+            predicted_target = average_distance2(training,validation(i,1:end-1),per);
             real_target = validation(i,end);
             if real_target == 1 && predicted_target == 1
                 TP = TP + 1;
