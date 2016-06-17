@@ -3,7 +3,7 @@
 %Optional code
 M = csvread('data_4f.csv');
 M = sortrows(M,5);
-set = make_sets2(M,4);
+set = make_sets_4f(M,4);
 
 
 for j = 1:4

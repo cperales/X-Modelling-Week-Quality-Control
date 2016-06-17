@@ -3,7 +3,7 @@ tic
 %% Optional code
 M = csvread('data_11x11f.csv');
 M = sortrows(M,1059);
-set = make_sets3(M,4);
+set = make_sets_11f(M,4);
 
 %% Cross validation
 per_accuracy = [];
@@ -43,7 +43,7 @@ for per = per_vector
         FN = 0;
 
         for i=1:size(validation,1)
-            predicted_target = average_distance1(training,validation(i,1:end-1),per);
+            predicted_target = average_nearest_distances(training,validation(i,1:end-1),per);
 %             predicted_target = mode_nearest_distances(training,validation(i,1:end-1),per);
             real_target = validation(i,end);
             if real_target == 1 && predicted_target == 1

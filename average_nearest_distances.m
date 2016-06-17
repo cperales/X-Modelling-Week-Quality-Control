@@ -2,7 +2,7 @@
 % samples from target 1 with the average of the distnces of the samples 
 % from target 2
 
-function target = average_distance1(train_set,sample,per)
+function target = average_nearest_distances(train_set,sample,per)
 
 if (nargin==2)
     per=20;
