@@ -1,7 +1,7 @@
 %% This classifier compares the mode of the label of the
 % nearest distances
 
-function target = mode_nearest_distances(train_set,sample,per)
+function target = mode_shortest_distances(train_set,sample,per)
 
 if (nargin==2)
     per=20;

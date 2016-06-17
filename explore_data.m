@@ -18,6 +18,7 @@ f3_new = f3(f1<prctile(f1,95) & f2<prctile(f2,95) & f3<prctile(f3,95) & f4<prcti
 f4_new = f4(f1<prctile(f1,95) & f2<prctile(f2,95) & f3<prctile(f3,95) & f4<prctile(f4,95));
 target_new = target(f1<prctile(f1,95) & f2<prctile(f2,95) & f3<prctile(f3,95) & f4<prctile(f4,95));
 fprintf('Apply all the percentiles it deletes %i samples\n',length(f1) - length(f1_new))
+target_eliminados = target(f1>prctile(f1,95) & f2>prctile(f2,95) & f3>prctile(f3,95) & f4>prctile(f4,95))
 
 disp('Correlation among filter features with also the target')
 corrcoef([f1_new f2_new f3_new f4_new target_new])

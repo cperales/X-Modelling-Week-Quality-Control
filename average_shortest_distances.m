@@ -1,8 +1,8 @@
-%% This classifier compares the average of the nearest distances of the
+%% This classifier compares the average of the shortest distances of the
 % samples from target 1 with the average of the distnces of the samples 
 % from target 2
 
-function target = average_nearest_distances(train_set,sample,per)
+function target = average_shortest_distances(train_set,sample,per)
 
 if (nargin==2)
     per=20;
