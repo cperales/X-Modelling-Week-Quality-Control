@@ -1,4 +1,4 @@
-function subsets = make_sets3(complete_set,numOfPartitions,seed)
+function subsets = make_sets_11f(complete_set,numOfPartitions,seed)
 %for all the data
 if (nargin==2)
     seed=1;
